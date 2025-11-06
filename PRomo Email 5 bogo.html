@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HCT Kits: Maximize Uptime, Minimize Cost</title>
+  <style>
+    /* Universal styles for email client compatibility */
+    body, html {
+      margin: 0; padding: 0; height: 100% !important; width: 100% !important;
+      background: #f4f4f4; /* Light background for contrast */
+      font-family: Arial, sans-serif;
+      -webkit-text-size-adjust:none; -ms-text-size-adjust:none;
+      color: #333333;
+    }
+    table {
+      border-collapse: collapse;
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+    }
+    img {
+      border: 0;
+      outline: none;
+      text-decoration: none;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .email-container {
+      width: 100%;
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Logo and Header Styling */
+    .header {
+      padding: 25px 20px 15px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+    .logo-container {
+        /* Container for glow effect */
+        display: inline-block;
+        box-shadow: 0 0 20px rgba(179, 27, 27, 0.6); /* Red Glow Effect */
+        border-radius: 8px;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    .header img {
+      width: 392px; /* 280px * 1.4 = 392px (40% increase) */
+      height: auto;
+      margin: 0 auto;
+    }
+    
+    /* Hero/Intro Section Styling */
+    .hero-section {
+      background-color: #B31B1B; /* Primary Brand Red */
+      color: #ffffff;
+      padding: 30px 40px;
+      text-align: left;
+    }
+    .hero-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 0 15px 0;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .hero-text {
+      font-size: 16px;
+      margin: 0 0 20px 0;
+      line-height: 1.5;
+    }
+    .highlight-list {
+        list-style: disc;
+        margin: 10px 0 20px 20px;
+        padding: 0;
+    }
+    .highlight-list li {
+        margin-bottom: 8px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .key-details-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #fce883; /* Yellowish highlight */
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+
+    .products-table {
+      width: 100%;
+      padding: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+    .product-cell {
+      width: 50%;
+      vertical-align: top;
+      padding: 20px 10px;
+      text-align: center;
+    }
+    .product-box {
+        background: #fcfcfc;
+        border: 1px solid #eeeeee;
+        border-radius: 8px;
+        padding: 15px 10px;
+        height: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Product Image Hover Effect - Made More Dramatic */
+    .product-image-wrapper {
+        display: block;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-bottom: 12px;
+        /* Initial TILT to the left */
+        transform: rotate(-1.5deg);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        cursor: pointer; /* Indicate clickability */
+    }
+    .product-image-wrapper:hover {
+        /* Straighten up, grow more, and lift shadow more dramatically */
+        transform: rotate(0deg) scale(1.08); /* Increased scale to 1.08 */
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3); /* Larger, darker shadow */
+    }
+    .product-image {
+      max-height: 150px;
+      object-fit: contain;
+      border-radius: 6px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-name {
+      margin-bottom: 8px;
+      color: #B31B1B;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    /* Promotional Button Styling (3D look, glow, hover) */
+    .promo-button-wrapper {
+      margin-top: 10px;
+      margin-bottom: 15px;
+      display: block;
+      position: relative;
+      padding: 8px 0;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(252, 232, 131, 0.7); /* Glow effect */
+    }
+    .promo-button {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      background-color: #fce883; 
+      color: #333333;
+      font-weight: bold;
+      font-size: 17px;
+      border: 2px solid #a39567; /* Darker border for 3D depth */
+      border-bottom: 4px solid #a39567; /* Deeper bottom for depth */
+      border-radius: 4px;
+      padding: 8px 0;
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+    .promo-button:hover {
+        background-color: #ffe666; /* Lighter on hover */
+        border-bottom: 2px solid #a39567; /* Less depth on hover */
+        transform: translateY(2px); /* Slight press effect */
+    }
+
+
+    .info-section {
+      padding: 20px;
+      background-color: #ffffff;
+      border-top: 1px solid #eeeeee;
+      text-align: center;
+    }
+    .info-text {
+      font-size: 15px;
+      color: #555555;
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+    .footer {
+      background-color: #333333;
+      color: #cccccc;
+      padding: 20px 20px 10px 20px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    /* Form and Button Styling */
+    .form-section {
+        background-color: #fcfcfc;
+        padding: 30px 40px;
+        border-top: 5px solid #B31B1B;
+    }
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #B31B1B;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    .quantity-row input {
+        width: 80px;
+        text-align: center;
+    }
+    .quantity-row .label-col {
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+    }
+    .quantity-row .free-col {
+        font-size: 14px;
+        font-weight: bold;
+        color: #28a745; /* Green for free items */
+        text-align: right;
+    }
+    .button-table {
+      margin: 0 auto;
+    }
+    .cta-button a, .cta-button button {
+        display: block;
+        padding: 14px 30px;
+        font-weight: bold;
+        font-size: 17px;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        border: none;
+    }
+    .cta-button-red {
+        background-color: #B31B1B;
+    }
+    .cta-button-large button {
+        padding: 18px 40px;
+        font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div style="background:#f4f4f4; padding:20px 0;">
+    <div class="email-container" role="main" aria-label="Hydraulic Quick Coupler Stock-Up Promotion">
+
+      <!-- Header with logo and glow -->
+      <div class="header">
+        <div class="logo-container">
+            <img src="https://hctkits.com/wp-content/themes/schydrauli/images/logo2x.png" alt="HCT Kits Logo" />
+        </div>
+      </div>
+
+      <!-- Hero Section (Updated Content) -->
+      <div class="hero-section">
+        <h1 class="hero-title">🛠️ MAXIMIZE UPTIME. MINIMIZE COST.</h1>
+        <p class="hero-text">Don't let unexpected downtime derail your production schedule. This is your chance to stock up on the Quick Coupler Replacement Parts you need—direct from the manufacturer, HCT—and secure massive savings for the year ahead.</p>
+
+        <h3 class="key-details-title">Your Exclusive Offer Highlights:</h3>
+        <ul class="highlight-list">
+            <li><strong>Reduce Downtime:</strong> Stock up now on essential parts direct from the manufacturer (HCT) to ensure you're ready for any unexpected maintenance and maximize your operational uptime.</li>
+            <li><strong>FREE Freight:</strong> Every stock order placed before the end of the year qualifies for FREE freight.</li>
+            <li><strong>Bulk Purchase Savings:</strong> Lock in special bulk purchase pricing on your essential parts.</li>
+        </ul>
+
+        <h3 class="key-details-title">Key Details & Deadlines:</h3>
+        <ul class="highlight-list">
+            <li>This special bulk purchase offer is valid until <strong>December 31, 2025!</strong></li>
+            <li>All stock orders must be received and approved by this end date to qualify.</li>
+            <li>For your protection, all approved orders will have the final pricing clearly quoted back to you for final approval before anything ships.</li>
+        </ul>
+        <p class="hero-text" style="font-weight: bold; text-align: center; margin-top: 25px;">Ready to Secure Your Stock and Savings?</p>
+      </div>
+
+      <!-- Products 2-column layout -->
+      <table role="presentation" class="products-table" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+        <tr>
+          <!-- Product 1 (Z-6040: Buy 4, Get 1) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/yy4AAOSwadloI6UB/s-l1600.jpg" target="_blank">
+                    <img class="product-image" data-part="Z-6040" src="https://i.ebayimg.com/images/g/yy4AAOSwadloI6UB/s-l1600.jpg" alt="Z-6040 Coupler Lock Valve" width="250" />
+                </a>
+                <div class="product-name">Z-6040 Coupler Lock Valve</div>
+                <div style="font-size: 15px; color: #555;">The essential component for secure coupling.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('Z-6040', 4)">BUY FOUR, GET ONE FREE</button>
+                </div>
+            </div>
+          </td>
+          <!-- Product 2 (A-0103-A: Buy 8, Get 2) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/VFYAAOSwp7Rn8-Il/s-l1600.jpg" target="_blank">
+                    <img class="product-image" data-part="A-0103-A" src="https://i.ebayimg.com/images/g/VFYAAOSwp7Rn8-Il/s-l1600.jpg" alt="A-0103-A Junction Block Assembly ORFS" width="250" />
+                </a>
+                <div class="product-name">A-0103-A Junction Block Assembly ORFS</div>
+                <div style="font-size: 15px; color: #555;">Reliable ORFS assembly for demanding environments.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('A-0103-A', 8)">BUY EIGHT, GET TWO FREE</button>
+                </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <!-- Product 3 (Z-6418: Buy 8, Get 2) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/jUMAAOSw65xn8-n1/s-l1600.png" target="_blank">
+                    <img class="product-image" data-part="Z-6418" src="https://i.ebayimg.com/images/g/jUMAAOSw65xn8-n1/s-l1600.png" alt="Z-6418 ORFS Live/Super Swivel" width="250" />
+                </a>
+                <div class="product-name">Z-6418 ORFS Live / Super Swivel</div>
+                <div style="font-size: 15px; color: #555;">Reduce hose twisting and extend life.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('Z-6418', 8)">BUY EIGHT, GET TWO FREE</button>
+                </div>
+            </div>
+          </td>
+          <!-- Product 4 (Z-6035: Buy 9, Get 1) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/6sgAAOSwgstn883F/s-l1600.jpg" target="_blank">
+                    <img class="product-image" data-part="Z-6035" src="https://i.ebayimg.com/images/g/6sgAAOSwgstn883F/s-l1600.jpg" alt="Z-6035 Plated Junction Block" width="250" />
+                </a>
+                <div class="product-name">Z-6035 Plated Junction Block</div>
+                <div style="font-size: 15px; color: #555;">High-quality, durable plated junction block.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('Z-6035', 9)">BUY NINE, GET ONE FREE</button>
+                </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <!-- Product 5 (A-0104: Buy 8, Get 2) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/H70AAeSwovhomjrt/s-l1600.png" target="_blank">
+                    <img class="product-image" data-part="A-0104" src="https://i.ebayimg.com/images/g/H70AAeSwovhomjrt/s-l1600.png" alt="A-0104 6 Port Block Assembly ORFS" width="250" />
+                </a>
+                <div class="product-name">A-0104 6 Port Block Assembly ORFS</div>
+                <div style="font-size: 15px; color: #555;">Expand your hydraulic connections easily.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('A-0104', 8)">BUY EIGHT, GET TWO FREE</button>
+                </div>
+            </div>
+          </td>
+          <!-- Product 6 (M-7228-A: Buy 5, Get 5) -->
+          <td class="product-cell">
+            <div class="product-box">
+                <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/9OMAAeSwpGBoZTo8/s-l1600.jpg" target="_blank">
+                    <img class="product-image" data-part="M-7228-A" src="https://i.ebayimg.com/images/g/9OMAAeSwpGBoZTo8/s-l1600.jpg" alt="M-7228-A A-0103-A Mount with hardware" width="250" />
+                </a>
+                <div class="product-name">M-7228-A A-0103-A Mount with hardware</div>
+                <div style="font-size: 15px; color: #555;">Mounting hardware for a perfect fit.</div>
+                <div class="promo-button-wrapper">
+                    <button class="promo-button" onclick="autofillOrder('M-7228-A', 5)">BUY FIVE, GET FIVE FREE</button>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      
+      <!-- Order Form Section -->
+      <div class="form-section">
+        <h2 style="color: #B31B1B; text-align: center; margin-top: 0; font-size: 24px;">Place Your Promotional Order</h2>
+        <p style="text-align: center; color: #555; margin-bottom: 25px;">Enter your desired quantities below, or click a "Buy X, Get Y Free" button above to autofill the minimum order!</p>
+
+        <form id="orderForm" onsubmit="return false;">
+            <!-- Contact Fields -->
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 20px;">
+                <tr>
+                    <td class="form-group" style="padding-right: 10px;">
+                        <label for="customerName">Customer Name*</label>
+                        <input type="text" id="customerName" name="customerName" required>
+                    </td>
+                    <td class="form-group" style="padding-left: 10px;">
+                        <label for="poNumber">PO Number (Optional)</label>
+                        <input type="text" id="poNumber" name="poNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="form-group" style="padding-right: 10px;">
+                        <label for="emailAddress">Email Address*</label>
+                        <input type="email" id="emailAddress" name="emailAddress" required>
+                    </td>
+                    <td class="form-group" style="padding-left: 10px;">
+                        <label for="phoneNumber">Phone Number*</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="form-group">
+                <label for="deliveryAddress">Delivery Address*</label>
+                <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea>
+            </div>
+            
+            <h3 style="color: #333; margin-top: 30px; margin-bottom: 15px; font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Product Quantities</h3>
+
+            <!-- Product Quantity Table -->
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 30px; border: 1px solid #eee; background: #fff; border-radius: 4px;">
+                <thead>
+                    <tr style="background-color: #f7f7f7; font-weight: bold; font-size: 14px; color: #B31B1B;">
+                        <td style="padding: 10px; width: 60%; text-align: left;">Part Number</td>
+                        <td style="padding: 10px; width: 20%; text-align: center;">Qty Desired</td>
+                        <td style="padding: 10px; width: 20%; text-align: right;">Free Items</td>
+                    </tr>
+                </thead>
+                <tbody id="productInputs">
+                    <!-- The input fields have a unique part identifier and the buy/get ratios -->
+                    <tr class="quantity-row" id="product_Z6040">
+                        <td class="label-col" style="padding: 10px;">Z-6040 Coupler Lock Valve</td>
+                        <td style="text-align: center;">
+                            <input type="number" data-part="Z-6040" data-buy="4" data-get="1" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px;"><span id="free_Z-6040">0</span></td>
+                    </tr>
+                    <tr class="quantity-row" id="product_A0103A">
+                        <td class="label-col" style="padding: 10px; background-color: #fcfcfc;">A-0103-A Junction Block Assembly ORFS</td>
+                        <td style="text-align: center; background-color: #fcfcfc;">
+                            <input type="number" data-part="A-0103-A" data-buy="8" data-get="2" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px; background-color: #fcfcfc;"><span id="free_A-0103-A">0</span></td>
+                    </tr>
+                    <tr class="quantity-row" id="product_Z6418">
+                        <td class="label-col" style="padding: 10px;">Z-6418 ORFS Live / Super Swivel</td>
+                        <td style="text-align: center;">
+                            <input type="number" data-part="Z-6418" data-buy="8" data-get="2" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px;"><span id="free_Z-6418">0</span></td>
+                    </tr>
+                    <tr class="quantity-row" id="product_Z6035">
+                        <td class="label-col" style="padding: 10px; background-color: #fcfcfc;">Z-6035 Plated Junction Block</td>
+                        <td style="text-align: center; background-color: #fcfcfc;">
+                            <input type="number" data-part="Z-6035" data-buy="9" data-get="1" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px; background-color: #fcfcfc;"><span id="free_Z-6035">0</span></td>
+                    </tr>
+                    <tr class="quantity-row" id="product_A0104">
+                        <td class="label-col" style="padding: 10px;">A-0104 6 Port Block Assembly ORFS</td>
+                        <td style="text-align: center;">
+                            <input type="number" data-part="A-0104" data-buy="8" data-get="2" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px;"><span id="free_A-0104">0</span></td>
+                    </tr>
+                    <tr class="quantity-row" id="product_M7228A">
+                        <td class="label-col" style="padding: 10px; background-color: #fcfcfc;">M-7228-A Mount with hardware</td>
+                        <td style="text-align: center; background-color: #fcfcfc;">
+                            <input type="number" data-part="M-7228-A" data-buy="5" data-get="5" value="0" min="0" oninput="calculateFree(this)">
+                        </td>
+                        <td class="free-col" style="padding: 10px; background-color: #fcfcfc;"><span id="free_M-7228-A">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Submit Button -->
+            <div style="text-align:center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="button-table">
+                    <tr>
+                        <td class="cta-button cta-button-red cta-button-large" style="border-radius:5px; text-align:center;">
+                            <button type="button" onclick="submitOrder()">SUBMIT MY PROMOTIONAL ORDER</button>
+                        </td>
+                    </tr>
+                </table>
+                <p style="font-size: 13px; color: #555; margin-top: 15px; margin-bottom: 25px;">*A confirmation email will be generated, ready to send to our parts department.</p>
+
+                <!-- New Contact Information -->
+                <p style="font-size: 18px; font-weight: bold; color: #B31B1B; line-height: 1.4;">
+                    Not seeing the item you need to restock? Contact our sales department at 
+                    <a href="mailto:parts@hctkits.com" style="color: #B31B1B; text-decoration: underline;">hctkits.com</a> 
+                    or call <a href="tel:7704742657" style="color: #B31B1B; text-decoration: underline;">770 474 2657</a> 
+                    and ask for the Parts Department. Get your orders placed today to beat the deadline.
+                </p>
+            </div>
+        </form>
+      </div>
+
+      <!-- Terms and Expiration -->
+      <div class="info-section">
+        <p class="info-text" style="font-weight: bold; color: #B31B1B;">PROMOTION ENDS: December 31st, 2025</p>
+        <p class="info-text">*All Promotional Orders must be on the same PO or Order to be eligible for the promotion.</p>
+        <p class="info-text">*Offer valid while supplies last. Contact us directly for bulk pricing beyond the promotion.</p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p style="margin: 0;">HCT Kits | Your Trusted Source for Hydraulic Parts</p>
+        <p style="margin-top: 5px;">[Address Line] | [Phone Number]</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Function to calculate free items based on the input quantity and the exact buy/get ratios
+    function calculateFree(inputElement) {
+        const desiredQty = parseInt(inputElement.value) || 0;
+        const buy = parseInt(inputElement.getAttribute('data-buy'));
+        const get = parseInt(inputElement.getAttribute('data-get'));
+        const part = inputElement.getAttribute('data-part');
+
+        let freeQty = 0;
+        if (desiredQty > 0) {
+            // Formula: Math.floor(Desired / Buy) * Get
+            freeQty = Math.floor(desiredQty / buy) * get;
+        }
+        
+        // Update the corresponding free quantity display span
+        document.getElementById(`free_${part}`).textContent = freeQty;
+    }
+
+    // Function to autofill the form when a promo button is clicked (FIXED: Increments Quantity)
+    function autofillOrder(partId, buyQty) {
+        // Find the input element for the specific part
+        const inputElement = document.querySelector(`input[data-part="${partId}"]`);
+        
+        if (inputElement) {
+            // Get current value, default to 0 if null/empty/NaN
+            const currentQty = parseInt(inputElement.value) || 0;
+            
+            // Increment the value by the minimum purchase quantity (buyQty)
+            inputElement.value = currentQty + buyQty; 
+            
+            // Recalculate the free items for visual feedback
+            calculateFree(inputElement);
+            
+            // Scroll to the order form to encourage submission
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Function to handle form submission and generate mailto link
+    function submitOrder() {
+        const form = document.getElementById('orderForm');
+
+        // 1. Basic Required Field Validation
+        if (!form.reportValidity()) {
+            return; // Stop if required fields are missing
+        }
+
+        // 2. Gather Contact Info
+        const customerName = document.getElementById('customerName').value;
+        const poNumber = document.getElementById('poNumber').value;
+        const emailAddress = document.getElementById('emailAddress').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        // Replace newlines with spaces for clean URL encoding
+        const deliveryAddress = document.getElementById('deliveryAddress').value.replace(/\n/g, ' ');
+
+        // 3. Gather Product Order Data
+        const productInputs = form.querySelectorAll('input[type="number"][data-part]');
+        let orderDetails = '';
+        let totalItemsOrdered = 0;
+
+        productInputs.forEach(input => {
+            const desiredQty = parseInt(input.value) || 0;
+            const freeQty = parseInt(document.getElementById(`free_${input.getAttribute('data-part')}`).textContent) || 0;
+            const partName = input.getAttribute('data-part');
+
+            if (desiredQty > 0) {
+                orderDetails += `Product: ${partName} | Buy Qty: ${desiredQty} | FREE Qty: ${freeQty} (Total Parts: ${desiredQty + freeQty})\n`;
+                totalItemsOrdered += desiredQty;
+            }
+        });
+
+        if (totalItemsOrdered === 0) {
+             // Use a custom message box instead of alert()
+            const messageBox = document.createElement('div');
+            messageBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; font-family: Arial, sans-serif;';
+            messageBox.innerHTML = `
+                <p style="font-weight: bold; color: #B31B1B; margin: 0 0 15px 0;">Order Error</p>
+                <p style="margin: 0 0 15px 0;">Please enter a quantity greater than zero for at least one item.</p>
+                <button onclick="this.parentNode.remove()" style="background: #B31B1B; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; float: right;">OK</button>
+            `;
+            document.body.appendChild(messageBox);
+            return; 
+        }
+
+        // 4. Construct Email Body
+        let emailBody = `--- HCT KITS PROMOTIONAL ORDER REQUEST ---\n\n`;
+        emailBody += `Customer: ${customerName}\n`;
+        emailBody += `PO Number: ${poNumber || 'N/A'}\n`;
+        emailBody += `Email: ${emailAddress}\n`;
+        emailBody += `Phone: ${phoneNumber}\n`;
+        emailBody += `Delivery Address: ${deliveryAddress}\n\n`;
+        emailBody += `--- ORDER DETAILS (PROMO QTY) ---\n`;
+        emailBody += orderDetails;
+        emailBody += `\n--- END OF ORDER ---\n`;
+        emailBody += `\nNote: All orders must comply with the promotion terms (same PO) and are subject to availability.`;
+
+
+        // 5. Construct mailto Link
+        const subject = encodeURIComponent(`PROMO ORDER: ${customerName} - ${poNumber || 'No PO'}`);
+        const body = encodeURIComponent(emailBody);
+        
+        const mailtoLink = `mailto:parts@hctkits.com?subject=${subject}&body=${body}`;
+
+        // 6. Open Email Client
+        window.location.href = mailtoLink;
+    }
+    
+    // Initial calculation on load for any default values (all 0 here, but good practice)
+    window.onload = function() {
+        const productInputs = document.querySelectorAll('#orderForm input[type="number"][data-part]');
+        productInputs.forEach(input => calculateFree(input));
+    };
+  </script>
+</body>
+</html>
