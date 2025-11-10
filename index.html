@@ -261,6 +261,30 @@
     .cta-button-red {
         background-color: #B31B1B;
     }
+
+    /* CORRECTED GREEN BUTTON STYLES AND PULSE ANIMATION */
+    /* Applied green background specifically to the inner button */
+    .cta-button-green button { 
+        background-color: #28a745; /* A standard, professional green */
+        animation: pulse-green 2s infinite; /* Apply the pulse animation */
+    }
+    .cta-button-green button:hover {
+        background-color: #218838; /* Slightly darker green on hover */
+    }
+
+    @keyframes pulse-green {
+        0% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+        }
+    }
+    /* END CORRECTED STYLES */
+
     .cta-button-large button {
         padding: 18px 40px;
         font-size: 20px;
@@ -271,14 +295,12 @@
   <div style="background:#f4f4f4; padding:20px 0;">
     <div class="email-container" role="main" aria-label="Hydraulic Quick Coupler Stock-Up Promotion">
 
-      <!-- Header with logo and glow -->
       <div class="header">
         <div class="logo-container">
             <img src="https://hctkits.com/wp-content/themes/schydrauli/images/logo2x.png" alt="HCT Kits Logo" />
         </div>
       </div>
 
-      <!-- Hero Section (Updated Content) -->
       <div class="hero-section">
         <h1 class="hero-title">🛠️ MAXIMIZE UPTIME. MINIMIZE COST.</h1>
         <p class="hero-text">Don't let unexpected downtime derail your production schedule. This is your chance to stock up on the Quick Coupler Replacement Parts you need—direct from the manufacturer, HCT—and secure massive savings for the year ahead.</p>
@@ -299,10 +321,8 @@
         <p class="hero-text" style="font-weight: bold; text-align: center; margin-top: 25px;">Ready to Secure Your Stock and Savings?</p>
       </div>
 
-      <!-- Products 2-column layout -->
       <table role="presentation" class="products-table" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
         <tr>
-          <!-- Product 1 (Z-6040: Buy 4, Get 1) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/yy4AAOSwadloI6UB/s-l1600.jpg" target="_blank">
@@ -315,7 +335,6 @@
                 </div>
             </div>
           </td>
-          <!-- Product 2 (A-0103-A: Buy 8, Get 2) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/VFYAAOSwp7Rn8-Il/s-l1600.jpg" target="_blank">
@@ -330,7 +349,6 @@
           </td>
         </tr>
         <tr>
-          <!-- Product 3 (Z-6418: Buy 8, Get 2) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/jUMAAOSw65xn8-n1/s-l1600.png" target="_blank">
@@ -343,7 +361,6 @@
                 </div>
             </div>
           </td>
-          <!-- Product 4 (Z-6035: Buy 9, Get 1) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/6sgAAOSwgstn883F/s-l1600.jpg" target="_blank">
@@ -358,7 +375,6 @@
           </td>
         </tr>
         <tr>
-          <!-- Product 5 (A-0104: Buy 8, Get 2) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/H70AAeSwovhomjrt/s-l1600.png" target="_blank">
@@ -371,7 +387,6 @@
                 </div>
             </div>
           </td>
-          <!-- Product 6 (M-7228-A: Buy 5, Get 5) -->
           <td class="product-cell">
             <div class="product-box">
                 <a class="product-image-wrapper" href="https://i.ebayimg.com/images/g/9OMAAeSwpGBoZTo8/s-l1600.jpg" target="_blank">
@@ -387,13 +402,11 @@
         </tr>
       </table>
       
-      <!-- Order Form Section -->
       <div class="form-section">
         <h2 style="color: #B31B1B; text-align: center; margin-top: 0; font-size: 24px;">Place Your Promotional Order</h2>
         <p style="text-align: center; color: #555; margin-bottom: 25px;">Enter your desired quantities below, or click a "Buy X, Get Y Free" button above to autofill the minimum order!</p>
 
         <form id="orderForm" onsubmit="return false;">
-            <!-- Contact Fields -->
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 20px;">
                 <tr>
                     <td class="form-group" style="padding-right: 10px;">
@@ -424,7 +437,6 @@
             
             <h3 style="color: #333; margin-top: 30px; margin-bottom: 15px; font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Product Quantities</h3>
 
-            <!-- Product Quantity Table -->
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 30px; border: 1px solid #eee; background: #fff; border-radius: 4px;">
                 <thead>
                     <tr style="background-color: #f7f7f7; font-weight: bold; font-size: 14px; color: #B31B1B;">
@@ -434,7 +446,6 @@
                     </tr>
                 </thead>
                 <tbody id="productInputs">
-                    <!-- The input fields have a unique part identifier and the buy/get ratios -->
                     <tr class="quantity-row" id="product_Z6040">
                         <td class="label-col" style="padding: 10px;">Z-6040 Coupler Lock Valve</td>
                         <td style="text-align: center;">
@@ -480,18 +491,16 @@
                 </tbody>
             </table>
 
-            <!-- Submit Button -->
             <div style="text-align:center;">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" class="button-table">
                     <tr>
-                        <td class="cta-button cta-button-red cta-button-large" style="border-radius:5px; text-align:center;">
+                        <td class="cta-button cta-button-green cta-button-large" style="border-radius:5px; text-align:center;">
                             <button type="button" onclick="submitOrder()">SUBMIT MY PROMOTIONAL ORDER</button>
                         </td>
                     </tr>
                 </table>
                 <p style="font-size: 13px; color: #555; margin-top: 15px; margin-bottom: 25px;">*A confirmation email will be generated, ready to send to our parts department.</p>
 
-                <!-- New Contact Information -->
                 <p style="font-size: 18px; font-weight: bold; color: #B31B1B; line-height: 1.4;">
                     Not seeing the item you need to restock? Contact our sales department at 
                     <a href="mailto:parts@hctkits.com" style="color: #B31B1B; text-decoration: underline;">hctkits.com</a> 
@@ -502,17 +511,15 @@
         </form>
       </div>
 
-      <!-- Terms and Expiration -->
       <div class="info-section">
         <p class="info-text" style="font-weight: bold; color: #B31B1B;">PROMOTION ENDS: December 31st, 2025</p>
         <p class="info-text">*All Promotional Orders must be on the same PO or Order to be eligible for the promotion.</p>
         <p class="info-text">*Offer valid while supplies last. Contact us directly for bulk pricing beyond the promotion.</p>
       </div>
 
-      <!-- Footer -->
       <div class="footer">
         <p style="margin: 0;">HCT Kits | Your Trusted Source for Hydraulic Parts</p>
-        <p style="margin-top: 5px;">[250 Fluid Drive McDnough GA 30253] | [770-474-2657]</p>
+        <p style="margin-top: 5px;">[Address Line] | [Phone Number]</p>
       </div>
 
     </div>
@@ -633,4 +640,3 @@
   </script>
 </body>
 </html>
-
